@@ -1,4 +1,4 @@
 class Post < ActiveRecord::Base
 
-	belongs :user
+	belongs_to :user
 end
