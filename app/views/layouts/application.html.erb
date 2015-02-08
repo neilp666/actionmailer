@@ -8,6 +8,16 @@
 </head>
 <body>
 
+	<% if user_signed_in? %>
+	<p>Hello, <%=current_user.name %> - <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %></p>
+
+	<% else %>
+
+	<%= link_to "Sign In", new_user_session_path %>
+	<%= link_to "Register", new_user_registration_path %>
+
+	<% end %>
+
 <%= yield %>
 
 </body>
