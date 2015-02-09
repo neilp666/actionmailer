@@ -27,6 +27,8 @@ class PostsController < ApplicationController
     @post = @user.posts.new(post_params)
     
     @post.save
+
+    PostMailer.post_created(@user).deliver
     respond_with(@post)
   end
 
